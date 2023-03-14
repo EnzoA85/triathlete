@@ -117,6 +117,7 @@
             btn_supprimer.TabIndex = 6;
             btn_supprimer.Text = "Supprimer";
             btn_supprimer.UseVisualStyleBackColor = true;
+            btn_supprimer.Click += btn_supprimer_Click;
             // 
             // cb_choisir_club
             // 

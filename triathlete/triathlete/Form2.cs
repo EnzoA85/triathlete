@@ -82,7 +82,7 @@ namespace triathlete
             cnx.SaveChanges();
             if (cnx.Clubs != null)
             {
-                MessageBox.Show("Le club à été ajouter");
+                MessageBox.Show("Le club à été ajouté");
                 tbx_nom.Text = "";
                 tbx_ville.Text = "";
                 tbx_rue.Text = "";
@@ -91,7 +91,23 @@ namespace triathlete
             }
             else
             {
-                MessageBox.Show("Le club n'a pas été ajouter, une erreur est survenue");
+                MessageBox.Show("Le club n'a pas été ajouté, une erreur est survenue");
+            }
+        }
+
+        private void btn_supprimer_Click(object sender, EventArgs e)
+        {
+            Bdearchambaud1Context cnx = new Bdearchambaud1Context();
+            Club unClub = (Club)cb_choisir_club.SelectedItem;
+            cnx.Clubs.Remove(unClub);
+            cnx.SaveChanges();
+            if (unClub == null)
+            {
+                MessageBox.Show("Le club à été supprimé");
+            }
+            else
+            {
+                MessageBox.Show("Le club n'a pas été supprimé, une erreur est survenue");
             }
         }
     }
