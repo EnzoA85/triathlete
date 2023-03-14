@@ -35,7 +35,64 @@ namespace triathlete
 
         private void cb_choisir_club_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            Bdearchambaud1Context cnx = new Bdearchambaud1Context();
+            Club unClub = (Club)cb_choisir_club.SelectedItem;
+            tbx_nom.Text = unClub.ClubNom;
+            tbx_ville.Text = unClub.ClubVille;
+            tbx_cp.Text = unClub.ClubCp;
+            tbx_rue.Text = unClub.ClubRue;
+            tbx_telephone.Text = unClub.ClubTel;
+        }
+
+        private void btn_modifier_Click(object sender, EventArgs e)
+        {
+            Bdearchambaud1Context cnx = new Bdearchambaud1Context();
+            Club unClub = (Club)cb_choisir_club.SelectedItem;
+            unClub.ClubNom = tbx_nom.Text;
+            unClub.ClubVille = tbx_ville.Text;
+            unClub.ClubCp = tbx_cp.Text;
+            unClub.ClubRue = tbx_rue.Text;
+            unClub.ClubTel = tbx_telephone.Text;
+
+            cnx.Clubs.Update(unClub);
+            cnx.SaveChanges();
+
+            if (cnx.Clubs != null)
+            {
+                MessageBox.Show("Le club à été modifié");
+            }
+            else
+            {
+                MessageBox.Show("Le club n'a pas été modifié, une erreur est survenue");
+            }
+        }
+
+        private void btn_creer_Click(object sender, EventArgs e)
+        {
+            Bdearchambaud1Context cnx = new Bdearchambaud1Context();
+            Club newClub = new Club()
+            {
+                ClubNom = tbx_nom.Text,
+                ClubVille = tbx_ville.Text,
+                ClubRue = tbx_rue.Text,
+                ClubCp = tbx_cp.Text,
+                ClubTel = tbx_telephone.Text,
+            };
+            cnx.Clubs.Add(newClub);
+            cnx.SaveChanges();
+            if (cnx.Clubs != null)
+            {
+                MessageBox.Show("Le club à été ajouter");
+                tbx_nom.Text = "";
+                tbx_ville.Text = "";
+                tbx_rue.Text = "";
+                tbx_cp.Text = "";
+                tbx_telephone.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Le club n'a pas été ajouter, une erreur est survenue");
+            }
         }
     }
 }

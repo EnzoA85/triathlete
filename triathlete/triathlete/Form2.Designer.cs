@@ -31,27 +31,32 @@
             btn_creer = new Button();
             lbl_choisir_club = new Label();
             lbl_nom = new Label();
-            lbl_adresse = new Label();
+            lbl_ville = new Label();
             lbl_téléphone = new Label();
             btn_modifier = new Button();
             btn_supprimer = new Button();
             cb_choisir_club = new ComboBox();
             tbx_nom = new TextBox();
-            tbx_adresse = new TextBox();
+            tbx_ville = new TextBox();
             tbx_telephone = new TextBox();
             gbx_gestion_club = new GroupBox();
+            tbx_rue = new TextBox();
+            tbx_cp = new TextBox();
+            lbl_cp = new Label();
+            lbl_rue = new Label();
             button1 = new Button();
             gbx_gestion_club.SuspendLayout();
             SuspendLayout();
             // 
             // btn_creer
             // 
-            btn_creer.Location = new Point(6, 172);
+            btn_creer.Location = new Point(6, 265);
             btn_creer.Name = "btn_creer";
             btn_creer.Size = new Size(75, 23);
             btn_creer.TabIndex = 0;
             btn_creer.Text = "Créer";
             btn_creer.UseVisualStyleBackColor = true;
+            btn_creer.Click += btn_creer_Click;
             // 
             // lbl_choisir_club
             // 
@@ -67,27 +72,27 @@
             // 
             lbl_nom.AutoSize = true;
             lbl_nom.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_nom.Location = new Point(6, 56);
+            lbl_nom.Location = new Point(6, 77);
             lbl_nom.Name = "lbl_nom";
             lbl_nom.Size = new Size(45, 21);
             lbl_nom.TabIndex = 2;
             lbl_nom.Text = "Nom";
             // 
-            // lbl_adresse
+            // lbl_ville
             // 
-            lbl_adresse.AutoSize = true;
-            lbl_adresse.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_adresse.Location = new Point(6, 92);
-            lbl_adresse.Name = "lbl_adresse";
-            lbl_adresse.Size = new Size(65, 21);
-            lbl_adresse.TabIndex = 3;
-            lbl_adresse.Text = "Adresse";
+            lbl_ville.AutoSize = true;
+            lbl_ville.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_ville.Location = new Point(6, 113);
+            lbl_ville.Name = "lbl_ville";
+            lbl_ville.Size = new Size(40, 21);
+            lbl_ville.TabIndex = 3;
+            lbl_ville.Text = "Ville";
             // 
             // lbl_téléphone
             // 
             lbl_téléphone.AutoSize = true;
             lbl_téléphone.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_téléphone.Location = new Point(6, 128);
+            lbl_téléphone.Location = new Point(6, 223);
             lbl_téléphone.Name = "lbl_téléphone";
             lbl_téléphone.Size = new Size(80, 21);
             lbl_téléphone.TabIndex = 4;
@@ -95,17 +100,18 @@
             // 
             // btn_modifier
             // 
-            btn_modifier.Location = new Point(128, 172);
+            btn_modifier.Location = new Point(128, 265);
             btn_modifier.Name = "btn_modifier";
             btn_modifier.RightToLeft = RightToLeft.No;
             btn_modifier.Size = new Size(75, 23);
             btn_modifier.TabIndex = 5;
             btn_modifier.Text = "Modifier";
             btn_modifier.UseVisualStyleBackColor = true;
+            btn_modifier.Click += btn_modifier_Click;
             // 
             // btn_supprimer
             // 
-            btn_supprimer.Location = new Point(253, 172);
+            btn_supprimer.Location = new Point(253, 265);
             btn_supprimer.Name = "btn_supprimer";
             btn_supprimer.Size = new Size(75, 23);
             btn_supprimer.TabIndex = 6;
@@ -123,47 +129,85 @@
             // 
             // tbx_nom
             // 
-            tbx_nom.Location = new Point(146, 58);
+            tbx_nom.Location = new Point(146, 79);
             tbx_nom.Name = "tbx_nom";
             tbx_nom.Size = new Size(182, 23);
             tbx_nom.TabIndex = 8;
             // 
-            // tbx_adresse
+            // tbx_ville
             // 
-            tbx_adresse.Location = new Point(146, 94);
-            tbx_adresse.Name = "tbx_adresse";
-            tbx_adresse.Size = new Size(182, 23);
-            tbx_adresse.TabIndex = 9;
+            tbx_ville.Location = new Point(146, 115);
+            tbx_ville.Name = "tbx_ville";
+            tbx_ville.Size = new Size(182, 23);
+            tbx_ville.TabIndex = 9;
             // 
             // tbx_telephone
             // 
-            tbx_telephone.Location = new Point(146, 126);
+            tbx_telephone.Location = new Point(146, 225);
             tbx_telephone.Name = "tbx_telephone";
             tbx_telephone.Size = new Size(182, 23);
             tbx_telephone.TabIndex = 10;
             // 
             // gbx_gestion_club
             // 
+            gbx_gestion_club.Controls.Add(tbx_rue);
+            gbx_gestion_club.Controls.Add(tbx_cp);
+            gbx_gestion_club.Controls.Add(lbl_cp);
+            gbx_gestion_club.Controls.Add(lbl_rue);
             gbx_gestion_club.Controls.Add(lbl_choisir_club);
             gbx_gestion_club.Controls.Add(tbx_telephone);
             gbx_gestion_club.Controls.Add(btn_creer);
-            gbx_gestion_club.Controls.Add(tbx_adresse);
+            gbx_gestion_club.Controls.Add(tbx_ville);
             gbx_gestion_club.Controls.Add(lbl_nom);
             gbx_gestion_club.Controls.Add(tbx_nom);
-            gbx_gestion_club.Controls.Add(lbl_adresse);
+            gbx_gestion_club.Controls.Add(lbl_ville);
             gbx_gestion_club.Controls.Add(cb_choisir_club);
             gbx_gestion_club.Controls.Add(lbl_téléphone);
             gbx_gestion_club.Controls.Add(btn_supprimer);
             gbx_gestion_club.Controls.Add(btn_modifier);
             gbx_gestion_club.Location = new Point(12, 12);
             gbx_gestion_club.Name = "gbx_gestion_club";
-            gbx_gestion_club.Size = new Size(334, 203);
+            gbx_gestion_club.Size = new Size(334, 299);
             gbx_gestion_club.TabIndex = 11;
             gbx_gestion_club.TabStop = false;
             // 
+            // tbx_rue
+            // 
+            tbx_rue.Location = new Point(146, 150);
+            tbx_rue.Name = "tbx_rue";
+            tbx_rue.Size = new Size(182, 23);
+            tbx_rue.TabIndex = 14;
+            // 
+            // tbx_cp
+            // 
+            tbx_cp.Location = new Point(146, 187);
+            tbx_cp.Name = "tbx_cp";
+            tbx_cp.Size = new Size(182, 23);
+            tbx_cp.TabIndex = 13;
+            // 
+            // lbl_cp
+            // 
+            lbl_cp.AutoSize = true;
+            lbl_cp.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_cp.Location = new Point(6, 185);
+            lbl_cp.Name = "lbl_cp";
+            lbl_cp.Size = new Size(91, 21);
+            lbl_cp.TabIndex = 12;
+            lbl_cp.Text = "Code Postal";
+            // 
+            // lbl_rue
+            // 
+            lbl_rue.AutoSize = true;
+            lbl_rue.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_rue.Location = new Point(6, 148);
+            lbl_rue.Name = "lbl_rue";
+            lbl_rue.Size = new Size(37, 21);
+            lbl_rue.TabIndex = 11;
+            lbl_rue.Text = "Rue";
+            // 
             // button1
             // 
-            button1.Location = new Point(12, 221);
+            button1.Location = new Point(12, 317);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 11;
@@ -175,7 +219,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(364, 253);
+            ClientSize = new Size(364, 346);
             Controls.Add(button1);
             Controls.Add(gbx_gestion_club);
             Name = "Form2";
@@ -191,15 +235,19 @@
         private Button btn_creer;
         private Label lbl_choisir_club;
         private Label lbl_nom;
-        private Label lbl_adresse;
+        private Label lbl_ville;
         private Label lbl_téléphone;
         private Button btn_modifier;
         private Button btn_supprimer;
         private ComboBox cb_choisir_club;
         private TextBox tbx_nom;
-        private TextBox tbx_adresse;
+        private TextBox tbx_ville;
         private TextBox tbx_telephone;
         private GroupBox gbx_gestion_club;
         private Button button1;
+        private TextBox tbx_rue;
+        private TextBox tbx_cp;
+        private Label lbl_cp;
+        private Label lbl_rue;
     }
 }
