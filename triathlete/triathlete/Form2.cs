@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using triathlete.Models;
 
 namespace triathlete
 {
@@ -19,7 +20,10 @@ namespace triathlete
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            Bdearchambaud1Context cnx = new Bdearchambaud1Context();
+            cb_choisir_club.DataSource = cnx.Clubs.OrderBy(x => x.ClubNom).ToList();
+            cb_choisir_club.DisplayMember = "ClubNom";
+            cb_choisir_club.ValueMember = "ClubId";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -27,6 +31,11 @@ namespace triathlete
             Form1 Form1 = new Form1();
             Form1.Show();
             this.Hide();
+        }
+
+        private void cb_choisir_club_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

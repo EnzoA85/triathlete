@@ -37,3 +37,4 @@ D:\earchambaud\triathlete\triathlete\triathlete\obj\Debug\net6.0-windows\refint\
 D:\earchambaud\triathlete\triathlete\triathlete\obj\Debug\net6.0-windows\triathlete.pdb
 D:\earchambaud\triathlete\triathlete\triathlete\obj\Debug\net6.0-windows\triathlete.genruntimeconfig.cache
 D:\earchambaud\triathlete\triathlete\triathlete\obj\Debug\net6.0-windows\ref\triathlete.dll
+D:\earchambaud\triathlete\triathlete\triathlete\obj\Debug\net6.0-windows\triathlete.Form2.resources

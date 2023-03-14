@@ -119,6 +119,7 @@
             cb_choisir_club.Name = "cb_choisir_club";
             cb_choisir_club.Size = new Size(182, 23);
             cb_choisir_club.TabIndex = 7;
+            cb_choisir_club.SelectedIndexChanged += cb_choisir_club_SelectedIndexChanged;
             // 
             // tbx_nom
             // 
