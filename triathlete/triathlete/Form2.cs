@@ -60,6 +60,9 @@ namespace triathlete
             if (cnx.Clubs != null)
             {
                 MessageBox.Show("Le club à été modifié");
+                cb_choisir_club.DataSource = cnx.Clubs.OrderBy(x => x.ClubNom).ToList();
+                cb_choisir_club.DisplayMember = "ClubNom";
+                cb_choisir_club.ValueMember = "ClubId";
             }
             else
             {
@@ -88,6 +91,9 @@ namespace triathlete
                 tbx_rue.Text = "";
                 tbx_cp.Text = "";
                 tbx_telephone.Text = "";
+                cb_choisir_club.DataSource = cnx.Clubs.OrderBy(x => x.ClubNom).ToList();
+                cb_choisir_club.DisplayMember = "ClubNom";
+                cb_choisir_club.ValueMember = "ClubId";
             }
             else
             {
@@ -101,9 +107,12 @@ namespace triathlete
             Club unClub = (Club)cb_choisir_club.SelectedItem;
             cnx.Clubs.Remove(unClub);
             cnx.SaveChanges();
-            if (unClub == null)
+            if (unClub != null)
             {
                 MessageBox.Show("Le club à été supprimé");
+                cb_choisir_club.DataSource = cnx.Clubs.OrderBy(x => x.ClubNom).ToList();
+                cb_choisir_club.DisplayMember = "ClubNom";
+                cb_choisir_club.ValueMember = "ClubId";
             }
             else
             {
