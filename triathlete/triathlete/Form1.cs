@@ -14,5 +14,12 @@ namespace triathlete
             Bdearchambaud1Context cnx = new Bdearchambaud1Context();
             dgv_club.DataSource = cnx.Clubs.ToList();
         }
+
+        private void btn_add_edit_delete_Click(object sender, EventArgs e)
+        {
+            Form2 Form2 = new Form2();
+            Form2.Show();
+            this.Hide();
+        }
     }
 }
