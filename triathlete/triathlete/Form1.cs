@@ -20,7 +20,6 @@ namespace triathlete
         {
             Form2 Form2 = new Form2();
             Form2.Show();
-            this.Hide();
         }
 
         private void btn_accueil_Click(object sender, EventArgs e)
