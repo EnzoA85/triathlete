@@ -119,5 +119,12 @@ namespace triathlete
                 MessageBox.Show("Le club n'a pas été supprimé, une erreur est survenue");
             }
         }
+
+        private void btn_accueil_Click(object sender, EventArgs e)
+        {
+            menu menu = new menu();
+            menu.Show();
+            this.Hide();
+        }
     }
 }

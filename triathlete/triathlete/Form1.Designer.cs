@@ -30,6 +30,7 @@
         {
             dgv_club = new DataGridView();
             btn_add_edit_delete = new Button();
+            btn_accueil = new Button();
             ((System.ComponentModel.ISupportInitialize)dgv_club).BeginInit();
             SuspendLayout();
             // 
@@ -52,11 +53,22 @@
             btn_add_edit_delete.UseVisualStyleBackColor = true;
             btn_add_edit_delete.Click += btn_add_edit_delete_Click;
             // 
+            // btn_accueil
+            // 
+            btn_accueil.Location = new Point(718, 444);
+            btn_accueil.Name = "btn_accueil";
+            btn_accueil.Size = new Size(70, 23);
+            btn_accueil.TabIndex = 13;
+            btn_accueil.Text = "Accueil";
+            btn_accueil.UseVisualStyleBackColor = true;
+            btn_accueil.Click += btn_accueil_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 476);
+            Controls.Add(btn_accueil);
             Controls.Add(btn_add_edit_delete);
             Controls.Add(dgv_club);
             Name = "Form1";
@@ -70,5 +82,6 @@
 
         private DataGridView dgv_club;
         private Button btn_add_edit_delete;
+        private Button btn_accueil;
     }
 }

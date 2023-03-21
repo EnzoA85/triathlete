@@ -45,6 +45,7 @@
             lbl_cp = new Label();
             lbl_rue = new Label();
             button1 = new Button();
+            btn_accueil = new Button();
             gbx_gestion_club.SuspendLayout();
             SuspendLayout();
             // 
@@ -212,15 +213,26 @@
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 11;
-            button1.Text = "Les Club";
+            button1.Text = "Les Clubs";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
+            // 
+            // btn_accueil
+            // 
+            btn_accueil.Location = new Point(276, 317);
+            btn_accueil.Name = "btn_accueil";
+            btn_accueil.Size = new Size(70, 23);
+            btn_accueil.TabIndex = 14;
+            btn_accueil.Text = "Accueil";
+            btn_accueil.UseVisualStyleBackColor = true;
+            btn_accueil.Click += btn_accueil_Click;
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(364, 346);
+            Controls.Add(btn_accueil);
             Controls.Add(button1);
             Controls.Add(gbx_gestion_club);
             Name = "Form2";
@@ -250,5 +262,6 @@
         private TextBox tbx_cp;
         private Label lbl_cp;
         private Label lbl_rue;
+        private Button btn_accueil;
     }
 }

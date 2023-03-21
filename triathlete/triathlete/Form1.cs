@@ -22,5 +22,12 @@ namespace triathlete
             Form2.Show();
             this.Hide();
         }
+
+        private void btn_accueil_Click(object sender, EventArgs e)
+        {
+            menu menu = new menu();
+            menu.Show();
+            this.Hide();
+        }
     }
 }
